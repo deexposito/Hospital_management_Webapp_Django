@@ -1,0 +1,82 @@
+{% extends 'accounts/main.html' %}
+
+    {% block content %}
+
+<br>
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>Next appointment: </h5>
+                <p>{% for i in next_app %}
+                    {{ i.date }}
+                    {{ i.staff.name }}
+                    {% endfor %}</p>
+            </div>
+        </div>  
+    </div>
+<br>
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>Diagnosis</h5>
+                <table class= "table table-sm">
+                    <tr>
+                        <th>Diagnosis</th>
+                        <th>Doctor</th>
+                        <th>Date</th>
+                        <th>Treatment</th>
+                    </tr>
+    
+                        {% for entery in diag %}
+                        <tr>
+                            <td>{{ entery.diagnosis }}</td>
+                            <td>{{ entery.doctor.name }}</td>
+                            <td>{{ entery.date }}</td>
+                            <td>{{ entery.treatment }}</td>
+                            
+                        </tr>
+                        {% endfor %}
+    
+                </table>
+            </div>
+        </div>
+    </div>
+<br>
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>Check-Ups</h5>
+                <table class= "table table-sm">
+                    <tr>
+                        <th>Date</th>
+                        <th>Nurse</th>
+                        <th>Urgency</th>
+                        <th>Heart Rate</th>
+                        <th>Blood Presure</th>
+                        <th>Temperature</th>
+                    </tr>
+
+                    {% for i in check_up %}    
+                    <tr>
+                        <td> {{ i.date }}</td>
+                        <td> {{ i.nurse.name }} </td>
+                        <td> {{ i.urgency }} </td>
+                        <td> {{ i.heart_rate }} </td>
+                        <td> {{ i.blood_presure }} </td>
+                        <td> {{ i.temperature }} </td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+    <br>
+    <div class="not-printable" style="text-align: right;">
+        <button  class="btn btn-sm btn-info" onclick="window.print()">Print this page</button>
+    </div>
+
+{% endblock %}
