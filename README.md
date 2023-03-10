@@ -128,7 +128,7 @@ If any user (patient, doctor, nurse, receptionist) tries to access views they do
 
 ![alt text](readme_pics/no_perm.png)
 
-## Runserver:
+# Runserver:
 
 * install the 'requirements.txt'.
 * cd to the 'website' folder
@@ -136,6 +136,3 @@ If any user (patient, doctor, nurse, receptionist) tries to access views they do
 ```
 python manage.py runserver
 ```
-
-## Credits
-The project was created by niqolla, iammarcol and dexposito98
